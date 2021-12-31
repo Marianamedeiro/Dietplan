@@ -9,12 +9,16 @@
 void telaSobre(void);
 void telaPrincipal(void);
 void telaEquipe(void);
-void telaMenuCardapio(void);
-void telaCadastrarCardapio(void);
-void telaPesquisarCardapio(void);
-void telaAlterarCardapio(void);
-void telaExcluirCardapio(void);
-
+void telaMenuPacientes(void);
+void telaCadastrarPacientes(void);
+void telaPesquisarPacientes(void);
+void telaAlterarPacientes(void);
+void telaExcluirPacientes(void);
+void telaMenuReceitas(void);
+void telaCadastrarReceitas(void);
+void telaAlterarReceitas(void);
+void telaPesquisarReceitas(void);
+void telaExcluirReceitas(void);
 
 
 /////
@@ -24,11 +28,16 @@ int main(void) {
     telaSobre();
     telaPrincipal();
     telaEquipe();
-    telaMenuCardapio();
-    telaCadastrarCardapio();
-    telaPesquisarCardapio();
-    telaAlterarCardapio();
-    telaExcluirCardapio();
+    telaMenuPacientes();
+    telaCadastrarPacientes();
+    telaPesquisarPacientes();
+    telaAlterarPacientes();
+    telaExcluirPacientes();
+    telaMenuReceitas();
+    telaCadastrarReceitas();
+    telaAlterarReceitas();
+    talaPesquisarReceitas();
+    telaExcluirReceitas();
     return 0;
 }
 
@@ -90,7 +99,7 @@ void telaPrincipal(void) {
     printf("///               5. Módulo Sobre                                                     ///\n");
     printf("///               0. Sair                                                             ///\n");
     printf("///                                                                                   ///\n");
-    printf("///               Escolher a opção desejada: ");
+    printf("///               Escolher a opção desejada: ")
     scanf("%c", &op);
     getchar();
     printf("///                                                                                   ///\n");
@@ -133,29 +142,27 @@ void telaEquipe(void) {
 
 
 
-void telaMenuCardapio(void) {
-    char op;
-
+void telaMenuPaciente(void) {
     system("clear||cls");
     printf("\n");
-    printf("//////////////////////////////////////////////////////////////////////////////////////////\n");
-    printf("///                                                                                    ///\n");
-    printf("///                   = = = = = = = = = = = = = = = = = = = = = = = = =                ///\n");
-    printf("///                 = = = = = = = = = = Menu Cardápio = = = = = = = = = =              ///\n");
-    printf("///                  = = = = = = = = = = = = = = = = = = = = = = = = = =               ///\n");
-    printf("///                                                                                    ///\n");
-    printf("///                  1. Cadastrar um novo Cardápio                                     ///\n");
-    printf("///                  2. Pesquisar a numeração de um Cardápio                           ///\n");
-    printf("///                  3. Atualizar o cadastro do Cardápio                               ///\n");
-    printf("///                  4. Excluir um Cardápio do sistema                                 ///\n");
-    printf("///                  0. Voltar ao menu anterior                                        ///\n");
-    printf("///                                                                                    ///\n");
-    printf("///                  Escolha a opção desejada: ");
+    printf("/////////////////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                                   ///\n");
+    printf("///                   = = = = = = = = = = = = = = = = = = = = = = = =                 ///\n");
+    printf("///                  = = = = = = = = = Menu Paciente = = = = = = = = =                ///\n");
+    printf("///                   = = = = = = = = = = = = = = = = = = = = = = = =                 ///\n");
+    printf("///                                                                                   ///\n");
+    printf("///                   1. Cadastrar um novo Paciente                                   ///\n");
+    printf("///                   2. Pesquisar por Paciente                                       ///\n");
+    printf("///                   3. Atualizar o cadastro de um Paciente                          ///\n");
+    printf("///                   4. Excluir um paciente do sistema                               ///\n");
+    printf("///                   0. Voltar ao menu anterior                                      ///\n");
+    printf("///                                                                                   ///\n");
+    printf("///                   Escolha a opção desejada: ");                                      
     scanf("%c", &op);
     getchar();
-    printf("///                                                                                    ///\n");
-    printf("///                                                                                    ///\n");
-    printf("//////////////////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                                   ///\n");
+    printf("///                                                                                   ///\n");
+    printf("/////////////////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
     printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
     getchar();
@@ -163,27 +170,51 @@ void telaMenuCardapio(void) {
 
 
 
-void telaCadastrarCardapio(void) {
-    char num[12];
-    char criacao[11];
-
+void telaCadastrarPaciente(void) {
+    char CPF[12];
+    char nome[51];
+    char idade[12];
+    char peso[12];
+    char alt[12];
+    char email[51];
+    char nasc[11];
+    char celular[12];
+    
     system("clear||cls");
     printf("\n");
-    printf("//////////////////////////////////////////////////////////////////////////////////////////\n");
-    printf("///                                                                                    ///\n");
-    printf("///                    = = = = = = = = = = = = = = = = = = = = = = = =                 ///\n");
-    printf("///                  = = = = = = = = = Cadastrar Cardápio = = = = = = = =              ///\n");
-    printf("///                    = = = = = = = = = = = = = = = = = = = = = = = =                 ///\n");
-    printf("///                                                                                    ///\n");
-    printf("///                    Numeração (apenas números):  ");
-    scanf("%[0-9]", num);
+    printf("/////////////////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                                   ///\n");
+    printf("///                    = = = = = = = = = = = = = = = = = = = = = = = =                ///\n");
+    printf("///                  = = = = = = = = Cadastrar Paciente = = = = = = = =               ///\n");
+    printf("///                   = = = = = = = = = = = = = = = = = = = = = = = =                 ///\n");
+    printf("///                                                                                   ///\n");
+    printf("///                    CPF (apenas números): ");
+    scanf("%[0-9]", CPF);
     getchar();
-    printf("///                    Data da Criação (dd/mm/aaaa):  ");
-    scanf("%[0-9]", criacao);
+    printf("///                    Nome completo: ");
+    scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
     getchar();
-    printf("///                                                                                    ///\n");
-    printf("///                                                                                    ///\n");
-    printf("//////////////////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                    Idade: ");
+    scanf("%[0-9]", idade);
+    getchar();
+    printf("///                    Peso: ");
+    scanf("%[0-9]", peso);
+    getchar();
+    printf("///                    Altura: ");
+    scanf("%[0-9]", alt);
+    getchar();
+    printf("///                    E-mail: ");
+    scanf("%[A-Za-z0-9@._]", email);
+    getchar();
+    printf("///                    Data de Nascimento (dd/mm/aaaa): ");  
+    scanf("%[0-9]", nasc);
+    getchar();
+    printf("///                    Celular (apenas números):  ");
+    scanf("%[0-9]", celular);
+    getchar();
+    printf("///                                                                                   ///\n");
+    printf("///                                                                                   ///\n");
+    printf("/////////////////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
     printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
     getchar();
@@ -191,23 +222,23 @@ void telaCadastrarCardapio(void) {
 
 
 
-void telaPesquisarCardapio(void) {
-    char num[12];
-
+void telaPesquisarPaciente(void) {
+    char CPF[12];
+    
     system("clear||cls");
     printf("\n");
-    printf("//////////////////////////////////////////////////////////////////////////////////////////\n");
-    printf("///                                                                                    ///\n");
-    printf("///                   = = = = = = = = = = = = = = = = = = = = = = = =                  ///\n");
-    printf("///                 = = = = = = = = Pesquisar Cardápio = = = = = = = =                 ///\n");
-    printf("///                   = = = = = = = = = = = = = = = = = = = = = = = =                  ///\n");
-    printf("///                                                                                    ///\n");
-    printf("///                   Informe a numeração (apenas números):  ");
-    scanf("%[0-9]", num);
+    printf("/////////////////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                                   ///\n");
+    printf("///                 = = = = = = = = = = = = = = = = = = = = = = = =                   ///\n");
+    printf("///               = = = = = = = = Pesquisar Paciente = = = = = = = =                  ///\n");
+    printf("///                 = = = = = = = = = = = = = = = = = = = = = = = =                   ///\n");
+    printf("///                                                                                   ///\n");
+    printf("///                    Informe o CPF (apenas números): ");
+    scanf("%[0-9]", CPF);
     getchar();
-    printf("///                                                                                    ///\n");
-    printf("///                                                                                    ///\n");
-    printf("//////////////////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                                   ///\n");
+    printf("///                                                                                   ///\n");
+    printf("/////////////////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
     printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
     getchar();
@@ -215,23 +246,23 @@ void telaPesquisarCardapio(void) {
 
 
 
-void telaAlterarCardapio(void) {
-    char num[12];
-
-    system("clear||cls");
+void telaAlterarPaciente(void) {
+    char CPF[12];
+    
+    sYSTEM("clear||cls");
     printf("\n");
-    printf("//////////////////////////////////////////////////////////////////////////////////////////\n");
-    printf("///                                                                                    ///\n");
-    printf("///                    = = = = = = = = = = = = = = = = = = = = = = = =                 ///\n");
-    printf("///                  = = = = = = = = Alterar Cardápio = = = = = = = = =                ///\n");
-    printf("///                    = = = = = = = = = = = = = = = = = = = = = = = =                 ///\n");
-    printf("///                                                                                    ///\n");
-    printf("///                    Informe a numeração(apenas números):  ");
-    scanf("%[0-9]", num);
+    printf("/////////////////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                                   ///\n");
+    printf("///                    = = = = = = = = = = = = = = = = = = = = = = = =                ///\n");
+    printf("///                  = = = = = = = = Alterar Paciente = = = = = = = = =               ///\n");
+    printf("///                    = = = = = = = = = = = = = = = = = = = = = = = =                ///\n");
+    printf("///                                                                                   ///\n");
+    printf("///                     Informe o CPF (apenas números): ");
+    scanf("%[0-9]", CPF);
     getchar();
-    printf("///                                                                                    ///\n");
-    printf("///                                                                                    ///\n");
-    printf("//////////////////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                                   ///\n");
+    printf("///                                                                                   ///\n");
+    printf("/////////////////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
     printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
     getchar();
@@ -239,23 +270,152 @@ void telaAlterarCardapio(void) {
 
 
 
-void telaExcluirCardapio(void) {
-    char num[12];
-
+void telaExcluirPaciente(void) {
+    char cpf[12];
+    
     system("clear||cls");
     printf("\n");
-    printf("//////////////////////////////////////////////////////////////////////////////////////////\n");
-    printf("///                                                                                    ///\n");
-    printf("///                   = = = = = = = = = = = = = = = = = = = = = = = =                  ///\n");
-    printf("///                 = = = = = = = = Excluir Cardápio = = = = = = = = =                 ///\n");
-    printf("///                   = = = = = = = = = = = = = = = = = = = = = = = =                  ///\n");
-    printf("///                                                                                    ///\n");
-    printf("///                   Informe a numeração (apenas números): ");
+    printf("/////////////////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                                   ///\n");
+    printf("///                  = = = = = = = = = = = = = = = = = = = = = = = =                  ///\n");
+    printf("///                = = = = = = = = Excluir Paciente = = = = = = = = =                 ///\n");
+    printf("///                 = = = = = = = = = = = = = = = = = = = = = = = =                   ///\n");
+    printf("///                                                                                   ///\n");
+    printf("///               Informe o CPF (apenas números): ");
+    scanf("%[0-9]", CPF);
+    getchar();
+    printf("///                                                                                   ///\n");
+    printf("///                                                                                   ///\n");
+    printf("/////////////////////////////////////////////////////////////////////////////////////////\n");
+    printf("\n");
+    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+    getchar();
+}
+
+
+void telaMenuReceitas(void) {
+    char op;
+    
+    system("clear||cls");
+    printf("\n");
+    printf("/////////////////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                                   ///\n");
+    printf("///                 = = = = = = = = = = = = = = = = = = = = = = = =                   ///\n");
+    printf("///                = = = = = = = = = Menu Receita = = = = = = = = = =                 ///\n");
+    printf("///                 = = = = = = = = = = = = = = = = = = = = = = = =                   ///\n");
+    printf("///                                                                                   ///\n");
+    printf("///                  1. Cadastrar Receita                                             ///\n");
+    printf("///                  2. Pesquisar Receita                                             ///\n");
+    printf("///                  3. Alterar Receita                                               ///\n");
+    printf("///                  4. Excluir Receita                                               ///\n");
+    printf("///                  0. Voltar ao menu anterior                                       ///\n");
+    primtf("///                                                                                   ///\n");
+    printf("///                  Escolha a opção desejada:  ");                                      
+    scanf("%c", &op);
+    getchar(); 
+    printf("///                                                                                   ///\n");
+    printf("///                                                                                   ///\n");
+    printf("/////////////////////////////////////////////////////////////////////////////////////////\n");
+    printf("\n");
+    printf("\t\t\t>>> Tecle<ENTER> para continuar...\n");
+    getchar();
+    }
+    
+    
+    
+void telaCadastrarReceita(void) {
+    char num[12];
+    char criação[11];
+    
+    system("clear||cls");
+    printf("\n");
+    printf("/////////////////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                                   ///\n");
+    printf("///                     = = = = = = = = = = = = = = = = = = = = = = = =               ///\n");
+    printf("///                    = = = = = = = = Cadastrar Receita = = = = = = = =              ///\n");
+    printf("///                     = = = = = = = = = = = = = = = = = = = = = = = =               ///\n");
+    printf("///                                                                                   ///\n");
+    printf("///                  Numeração (apenas números): ");  
     scanf("%[0-9]", num);
     getchar();
-    printf("///                                                                                    ///\n");
-    printf("///                                                                                    ///\n");
-    printf("//////////////////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                  Data da Criação (dd/mm/aaaa): ");
+    scanf("%[0-9]", criação);
+    getchar();
+    printf("///                                                                                   ///\n");
+    printf("///                                                                                   ///\n");
+    printf("/////////////////////////////////////////////////////////////////////////////////////////\n");
+    printf("\n");
+    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+    getchar();
+}
+
+
+
+void telaPesquisarReceita(void) {
+    char num[12];
+    
+    system("clear||cls");
+    printf("\n");
+    printf("/////////////////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                                   ///\n");
+    printf("///                    = = = = = = = = = = = = = = = = = = = = = = = =                ///\n");
+    printf("///                  = = = = = = = = Pesquisar Receita = = = = = = = = =              ///\n");
+    printf("///                    = = = = = = = = = = = = = = = = = = = = = = = =                ///\n");
+    printf("///                                                                                   ///\n");
+    printf("///                    Informe a numeração(apenas números): ");
+    scanf("%[0-9]", num);
+    getchar();
+    printf("///                                                                                   ///\n");
+    printf("///                                                                                   ///\n");
+    printf("/////////////////////////////////////////////////////////////////////////////////////////\n");
+    printf("\n");
+    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+    getchar();
+}
+
+
+
+void telaAlterarReceita(void) {
+    char num[12];
+    
+    system("clear||cls");
+    printf("\n");
+    printf("/////////////////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                                   ///\n");
+    printf("///                    = = = = = = = = = = = = = = = = = = = = = = =                  ///\n");
+    printf("///                  = = = = = = = = Alterar Receita = = = = = = = = =                ///\n");
+    printf("///                    = = = = = = = = = = = = = = = = = = = = = = =                  ///\n");
+    printf("///                                                                                   ///\n");
+    printf("///                    Informe a numeração(apenas números): ");
+    scanf("%[0-9]", num);
+    getchar();
+    printf("///                                                                                   ///\n");
+    printf("///                                                                                   ///\n");
+    printf("/////////////////////////////////////////////////////////////////////////////////////////\n");
+    printf("\n");
+    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+    getchar();
+}
+
+
+
+void telaExcluirReceita(void) {
+    char num[12];
+    
+    system("clear||cls");
+    printf("\n");
+    printf("/////////////////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                                   ///\n");
+    printf("///                 = = = = = = = = = = = = = = = = = = = = = = = =                   ///\n");
+    printf("///               = = = = = = = = Excluir Receita = = = = = = = = =                   ///\n");
+    printf("///                 = = = = = = = = = = = = = = = = = = = = = = = =                   ///\n");
+    printf("///                                                                                   ///\n");
+    printf("///                 Informe a numeração (apenas números): ");
+    scanf("%[0-9]", num);
+    getchar();
+    printf("///                                                                                   ///\n");
+    printf("///                                                                                   ///\n");
+    printf("/////////////////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
     printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
     getchar();
