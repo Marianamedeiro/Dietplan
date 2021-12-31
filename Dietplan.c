@@ -66,6 +66,8 @@ void telaSobre(void) {
 
 
 void telaPrincipal(void) {
+    char op;
+
     system("clear||cls");
     printf("\n");
     printf("/////////////////////////////////////////////////////////////////////////////////////////\n");
@@ -88,9 +90,14 @@ void telaPrincipal(void) {
     printf("///               5. Módulo Sobre                                                     ///\n");
     printf("///               0. Sair                                                             ///\n");
     printf("///                                                                                   ///\n");
+    printf("///               Escolher a opção desejada: ");
+    scanf("%c", &op);
+    getchar();
+    printf("///                                                                                   ///\n");
+    printf("///                                                                                   ///\n");
     printf("/////////////////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
-    printf("\t\t\t>>> Tecle <ENTER> para continuar...\ n");
+    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
     getchar();
 }
 
@@ -127,6 +134,8 @@ void telaEquipe(void) {
 
 
 void telaMenuCardapio(void) {
+    char op;
+
     system("clear||cls");
     printf("\n");
     printf("//////////////////////////////////////////////////////////////////////////////////////////\n");
@@ -141,7 +150,9 @@ void telaMenuCardapio(void) {
     printf("///                  4. Excluir um Cardápio do sistema                                 ///\n");
     printf("///                  0. Voltar ao menu anterior                                        ///\n");
     printf("///                                                                                    ///\n");
-    printf("///                  Escolha a opção desejada:                                         ///\n");
+    printf("///                  Escolha a opção desejada: ");
+    scanf("%c", &op);
+    getchar();
     printf("///                                                                                    ///\n");
     printf("///                                                                                    ///\n");
     printf("//////////////////////////////////////////////////////////////////////////////////////////\n");
@@ -153,6 +164,9 @@ void telaMenuCardapio(void) {
 
 
 void telaCadastrarCardapio(void) {
+    char num[12];
+    char criacao[11];
+
     system("clear||cls");
     printf("\n");
     printf("//////////////////////////////////////////////////////////////////////////////////////////\n");
@@ -161,8 +175,12 @@ void telaCadastrarCardapio(void) {
     printf("///                  = = = = = = = = = Cadastrar Cardápio = = = = = = = =              ///\n");
     printf("///                    = = = = = = = = = = = = = = = = = = = = = = = =                 ///\n");
     printf("///                                                                                    ///\n");
-    printf("///                    Numeração (apenas números):                                     ///\n");
-    printf("///                    Data da Criação (dd/mm/aaaa):                                   ///\n");
+    printf("///                    Numeração (apenas números):  ");
+    scanf("%[0-9]", num);
+    getchar();
+    printf("///                    Data da Criação (dd/mm/aaaa):  ");
+    scanf("%[0-9]", criacao);
+    getchar();
     printf("///                                                                                    ///\n");
     printf("///                                                                                    ///\n");
     printf("//////////////////////////////////////////////////////////////////////////////////////////\n");
@@ -174,6 +192,8 @@ void telaCadastrarCardapio(void) {
 
 
 void telaPesquisarCardapio(void) {
+    char num[12];
+
     system("clear||cls");
     printf("\n");
     printf("//////////////////////////////////////////////////////////////////////////////////////////\n");
@@ -182,7 +202,9 @@ void telaPesquisarCardapio(void) {
     printf("///                 = = = = = = = = Pesquisar Cardápio = = = = = = = =                 ///\n");
     printf("///                   = = = = = = = = = = = = = = = = = = = = = = = =                  ///\n");
     printf("///                                                                                    ///\n");
-    printf("///                   Informe a numeração (apenas números):                            ///\n");
+    printf("///                   Informe a numeração (apenas números):  ");
+    scanf("%[0-9]", num);
+    getchar();
     printf("///                                                                                    ///\n");
     printf("///                                                                                    ///\n");
     printf("//////////////////////////////////////////////////////////////////////////////////////////\n");
@@ -194,6 +216,8 @@ void telaPesquisarCardapio(void) {
 
 
 void telaAlterarCardapio(void) {
+    char num[12];
+
     system("clear||cls");
     printf("\n");
     printf("//////////////////////////////////////////////////////////////////////////////////////////\n");
@@ -202,7 +226,9 @@ void telaAlterarCardapio(void) {
     printf("///                  = = = = = = = = Alterar Cardápio = = = = = = = = =                ///\n");
     printf("///                    = = = = = = = = = = = = = = = = = = = = = = = =                 ///\n");
     printf("///                                                                                    ///\n");
-    printf("///                    Informe a numeração(apenas números):                            ///\n");
+    printf("///                    Informe a numeração(apenas números):  ");
+    scanf("%[0-9]", num);
+    getchar();
     printf("///                                                                                    ///\n");
     printf("///                                                                                    ///\n");
     printf("//////////////////////////////////////////////////////////////////////////////////////////\n");
@@ -214,6 +240,8 @@ void telaAlterarCardapio(void) {
 
 
 void telaExcluirCardapio(void) {
+    char num[12];
+
     system("clear||cls");
     printf("\n");
     printf("//////////////////////////////////////////////////////////////////////////////////////////\n");
@@ -222,7 +250,9 @@ void telaExcluirCardapio(void) {
     printf("///                 = = = = = = = = Excluir Cardápio = = = = = = = = =                 ///\n");
     printf("///                   = = = = = = = = = = = = = = = = = = = = = = = =                  ///\n");
     printf("///                                                                                    ///\n");
-    printf("///                   Informe a numeração (apenas números):                            ///\n");
+    printf("///                   Informe a numeração (apenas números): ");
+    scanf("%[0-9]", num);
+    getchar();
     printf("///                                                                                    ///\n");
     printf("///                                                                                    ///\n");
     printf("//////////////////////////////////////////////////////////////////////////////////////////\n");
